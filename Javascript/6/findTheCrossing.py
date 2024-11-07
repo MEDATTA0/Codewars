@@ -1,3 +1,11 @@
+# You are given four tuples. In each tuple there is coordinates x and y of a point.
+# There is one and only one line, that goes through two points, so with four points you can have two lines: first and second tuple is two points of a first line, thirs and fourth tuple is two points of the second line.
+# Your task is to find and return a tuple with x and y coordinates of lines crossing point.
+
+# Numbers can be positive as well as negative, integer or floats. Your answer shouldn't be rounded!!
+
+# Note, that if two lines are the same ( have infinite crossing points ) or parallel ( have no crossing points ), you will need to return None/Nothing depending on language.
+
 A = (5, 3)
 B = (10, 4)
 C = (5, 7.5)
