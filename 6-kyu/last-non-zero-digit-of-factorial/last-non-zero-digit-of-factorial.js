@@ -1,3 +1,14 @@
+ 
+function modPow(base, exp, mod) {
+  let result = 1;
+  base = base % mod;
+  while (exp > 0) {
+    if (exp % 2 === 1) result = (result * base) % mod;
+    base = (base * base) % mod;
+    exp = Math.floor(exp / 2);
+  }
+  return result;
+}
 ​
 function lastDigit(n) {
   let numbers = 1
@@ -18,6 +29,7 @@ function lastDigit(n) {
     if(filteredI === 0) filteredI = 1
     numbers = (numbers * filteredI) % 10
   }
-  if(t2s > t5s) numbers *= (2, t2s - t5s) % 10 
+  if(t2s > t5s) numbers = (numbers * modPow(2, t2s - t5s, 10)) % 10 
+  
   return numbers % 10
 }
