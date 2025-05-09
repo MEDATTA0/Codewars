@@ -18,6 +18,9 @@ function lastDigit(n) {
     if(filteredI === 0) filteredI = 1
     numbers.push(filteredI)
   }
-  let factorial = numbers.reduce((acc, curr) => acc * curr, 1) % 10
-  
+  let factorial = numbers.reduce((acc, curr) => acc * curr, 1)
+  if(t2s > t5s){
+    factorial*=Math.pow(2, t2s - t5s) 
+    
+  }
 }
