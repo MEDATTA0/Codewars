@@ -1,15 +1,17 @@
  
 function maxConsecZeros(n){
   const toReadable = {↔}
-  const zeros = n.toString(2).match(/(0)\1*/g)
+  let zeros = parseInt(n)
   console.log(zeros)
-  let max = 0;
+  zeros = zeros.toString(2)
   
-    if(zero.length < max){
-      return false
+//     .match(/(0)\1*/g)
+  let max = 0;
+  for (let i = 0; i < zeros.length; i++){
+    if(zeros[i].length < max){
+      continue
     }
-    max = zero.length
-    max
-  })
+    max = zeros[i].length
+  }
   return max;
 }
