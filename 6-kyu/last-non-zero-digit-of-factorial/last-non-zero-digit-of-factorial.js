@@ -1,26 +1,23 @@
- 
+​
 function lastDigit(n) {
-  const numbers = []
+  let numbers = 1
   let t2s = 0
   let t5s = 0
   for(let i = n; i > 2; i--){
     let filteredI = i;
-    while(!(filteredI % 5 || filteredI % 2)){
+    while(filteredI % 5 === 0 || filteredI % 2 === 0){
       if(!(filteredI % 5)){
         filteredI /= 5
         t5s++
       }
-      else{
+      if(!(filteredI % 2)){
         filteredI /= 2
         t2s++
       }
     }
     if(filteredI === 0) filteredI = 1
-    numbers.push(filteredI)
+    numbers = (numbers * filteredI) % 10
   }
-  let factorial = numbers.reduce((acc, curr) => acc * curr, 1)
-  if(t2s > t5s){
-    factorial*=Math.pow(2, t2s - t5s) 
-    
-  }
+  if(t2s > t5s) numbers *= (2, t2s - t5s) % 10 
+  return numbers % 10
 }
