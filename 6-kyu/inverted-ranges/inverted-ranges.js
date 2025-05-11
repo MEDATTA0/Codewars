@@ -8,13 +8,16 @@ function invertedRanges(ranges) {
     const range = ranges[i];
     for(let j = range[0]; j <= range[1]; j++) includedNumbers.push(j)
   }
-  console.log(includedNumbers)
+  if(includedNumbers[0] !== 0){
+    excludedNumbers.push([0, includedNumbers[0] - 1])
+  }
   
   for(let i = 0; i < includedNumbers.length; i++){
     if(includedNumbers[i+1] !== includedNumbers[i] + 1){
+      
       excludedNumbers.push([includedNumbers[i] + 1, includedNumbers[i+1] - 1 || 100])
     }
   }
-  console.log(excludedNumbers)
+​
   return excludedNumbers;
 }
