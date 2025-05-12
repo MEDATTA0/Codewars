@@ -4,7 +4,11 @@ function grabscrab(anagram, dictionary) {
   for(const word of dictionary){
     let matched = false
     for(let i = 0; i < anagram.length; i++){
-      if()
+      if(!word.includes(anagram[i])){
+        mat
+        break;
+      }
     }
+    if
   }
 }
