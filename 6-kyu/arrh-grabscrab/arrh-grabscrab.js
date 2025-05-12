@@ -18,11 +18,10 @@ function grabscrab(anagram, dictionary) {
       wordObject[letter] = 1
       }
     })
-    console.log(wordObject)
+//     console.log(wordObject)
     let matched = false
-    for(const [letter, frequency] in anagramObject){
-      
-      if(wordObject[letter] !== frequency){
+    for(const letter in anagramObject){
+      if(wordObject[letter] !== anagramObject[letter]){
         matched = false
         break;
       }else{
@@ -31,6 +30,7 @@ function grabscrab(anagram, dictionary) {
     }
     if(matched)
       matches.push(word)
+    
   }
   return matches;
 }
