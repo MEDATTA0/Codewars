@@ -2,13 +2,15 @@
 function grabscrab(anagram, dictionary) {
   const matches = [];
   for(const word of dictionary){
-    let matched = false
+    let notMatched = false
     for(let i = 0; i < anagram.length; i++){
       if(!word.includes(anagram[i])){
-        mat
+        notMatched = true
         break;
       }
     }
-    if
+    if(!notMatched) matches.push(word)
+    console.log(matches)
   }
+  return matches;
 }
