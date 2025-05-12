@@ -8,6 +8,7 @@ function grabscrab(anagram, dictionary) {
       anagramObject[anagram[i]] = 1
     }
   }
+  console.log(anagramObject)
   for(const word of dictionary){
     if(word.length !== anagram.length)
       break;
@@ -18,7 +19,7 @@ function grabscrab(anagram, dictionary) {
       wordObject[letter] = 1
       }
     })
-//     console.log(wordObject)
+    
     let matched = false
     for(const letter in anagramObject){
       if(wordObject[letter] !== anagramObject[letter]){
@@ -30,7 +31,6 @@ function grabscrab(anagram, dictionary) {
     }
     if(matched)
       matches.push(word)
-    
   }
   return matches;
 }
