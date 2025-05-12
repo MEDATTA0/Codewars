@@ -9,7 +9,8 @@ function grabscrab(anagram, dictionary) {
     }
   }
   for(const word of dictionary){
-    
+    if(word.length !== anagram.length)
+      break;
     const wordObject = {}
     word.split("").forEach((letter)=>{
       if(wordObject[letter]) wordObject[letter]++;
@@ -17,7 +18,14 @@ function grabscrab(anagram, dictionary) {
       wordObject[letter] = 1
       }
     })
+    console.log(wordObject)
+    
+    for(const [letter, frequency] in anagramObject){
+      if(wordObject[letter] !== frequency){
+        break;
+      }
+    }
+    matches.push(word)
   }
-  for(const [letter, frequency] of anagramObject)
   return matches;
 }
