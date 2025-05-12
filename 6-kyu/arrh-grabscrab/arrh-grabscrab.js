@@ -8,10 +8,16 @@ function grabscrab(anagram, dictionary) {
       anagramObject[anagram[i]] = 1
     }
   }
-  console.log(anagramObject)
   for(const word of dictionary){
-    const wordObject = {}
     
+    const wordObject = {}
+    word.split("").forEach((letter)=>{
+      if(wordObject[letter]) wordObject[letter]++;
+      else {
+      wordObject[letter] = 1
+      }
+    })
   }
+  for(const [letter, frequency] of anagramObject)
   return matches;
 }
