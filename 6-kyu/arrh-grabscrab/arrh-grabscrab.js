@@ -19,13 +19,18 @@ function grabscrab(anagram, dictionary) {
       }
     })
     console.log(wordObject)
-    
+    let matched = false
     for(const [letter, frequency] in anagramObject){
+      
       if(wordObject[letter] !== frequency){
+        matched = false
         break;
+      }else{
+        matched = true;
       }
     }
-    matches.push(word)
+    if(matched)
+      matches.push(word)
   }
   return matches;
 }
