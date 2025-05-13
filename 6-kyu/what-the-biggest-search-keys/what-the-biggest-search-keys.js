@@ -1,9 +1,10 @@
  
 function theBiggestSearchKeys(...keywords) {
   const sortedKeywords = keywords.sort().reverse()
-  
-  return sortedKeywords.filter((keyword) => {
+  let output = ""
+  sortedKeywords.some((keyword) => {
     if(keyword.length === sortedKeywords[0].length)
-      return `${keyword}`
+      output += `${keyword}`
   }).sort().join(", ")
+  
 }
