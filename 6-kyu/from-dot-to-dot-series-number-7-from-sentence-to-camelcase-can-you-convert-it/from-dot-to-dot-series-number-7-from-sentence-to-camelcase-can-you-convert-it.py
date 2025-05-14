@@ -1,6 +1,8 @@
  
 def to_camel_case(s, n):
     result = []
+    words = s.split(" ")
     
-    for i in 
+    for word in words:
+        
     pass
