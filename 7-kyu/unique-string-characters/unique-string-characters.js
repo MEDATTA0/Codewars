@@ -1,5 +1,6 @@
- 
 function solve(a,b){
-  
-  return (a + b).split("").filter((value) => )
+  return [
+    ...a.split("").filter((val) => !b.includes(val)), 
+    ...b.split("").filter((val) => !a.includes(val))
+  ].join("")
 };
