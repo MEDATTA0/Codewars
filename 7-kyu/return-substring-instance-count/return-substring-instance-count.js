@@ -1,5 +1,5 @@
 function solution(fullText, search) {
-  const myReg = new RegExp(search + "\1")
-  
-  return 0;
+  const myReg = new RegExp(search, "g")
+  const matches = fullText.match(myReg) ?? []
+  return matches.length;
 }
