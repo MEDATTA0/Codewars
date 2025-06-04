@@ -1,6 +1,6 @@
 export class Kata {
   static getCount(str: string): number {
-    const voyels = str.match(/[aeiou]/g)
-    return voyels ? voyels.length : 0
+    const vowels = str.match(/[aeiou]/g)
+    return vowels ? vowels.length : 0
   }
 }
