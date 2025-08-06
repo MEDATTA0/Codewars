@@ -1,8 +1,11 @@
  
 function maxSum(root) {
   console.log(root)
+  const visited = new Set();
+  const queue = [root];
+  visited.add(JSON.stringify(root));
   
-  const queue = []
+  for(const left, right of )
   
   return 0; // TODO: implementation
 }
