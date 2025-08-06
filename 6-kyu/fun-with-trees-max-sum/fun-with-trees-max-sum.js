@@ -1,11 +1,9 @@
- 
 const sumNodes = (root) => {
   if(root === null) return -Infinity;
-  if(leftValues === null && rightValues === null) return root.value
-//   if(leftValues === null) return root.value + rightValues
-//   if(rightValues === null) return root.value + leftValues
-  const leftValues = sumNodes(root.left)
-  const rightValues = sumNodes(root.right)
+  const {value, left, right} = root
+  if(left === null && right === null) return root.value
+  const leftValues = sumNodes(left)
+  const rightValues = sumNodes(right)
   return root.value + Math.max(leftValues, rightValues)
 }
 ​
