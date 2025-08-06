@@ -1,10 +1,16 @@
- 
-function maxSum(root) {
-  const visited = new Set();
-  const queue = [root];
-  visited.add(JSON.stringify(root));
-  if(root === null) return 0;
-  
-  console.log(root.value, maxSum(root.left), maxSum(root.right))
-  return 0
+const sumNodes = (root) => {
+  if(root === null) return null;
+  const leftValues = sumNodes(root.left)
+  const rightValues = sumNodes(root.right)
+  console.log(leftValues, rightValues)
+  if(leftValues === null && rightValues === null) return root.value
+  if(leftValues === null) return root.value + rightValues
+  if(rightValues === null) return root.value + leftValues
+  return root.value + Math.max(leftValues, rightValues)
 }
+​
+function maxSum(root) {
+  if(root === null) return 0
+  return sumNodes(root)
+}
+​
